@@ -1,30 +1,24 @@
 import Link from "next/link";
-import { Label } from "@/components/label";
-import { Input } from "@/components/input";
-import { Textarea } from "@/components/textarea";
-import { Button } from "@/components/button";
 import { Logo } from "@/components/logo";
 import { LogoImage } from "@/components/logo-image";
 import { YoutubeEmbed } from "@/components/youtube-embed";
 import {
   mdiChevronDoubleDown,
   mdiCloudOutline,
-  mdiEmailOutline,
   mdiHelpCircleOutline,
   mdiLockOutline,
-  mdiPhoneOutline,
 } from "@mdi/js";
 import Icon from "@mdi/react";
+import { CalendlyIntegration } from "@/components/calendly-integration";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#030635] text-white">
+    <div className="flex flex-col min-h-screen text-white">
       <header className="px-4 xl:px-6 h-16 flex items-center">
-        <Link className="flex items-center justify-center" href="#">
+        <Link className="flex items-center justify-center" href="/">
           <span className="h-6">
             <LogoImage />
           </span>
-          <span className="sr-only">Andrew</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <Link
@@ -53,13 +47,13 @@ export default function HomePage() {
           </Link>
         </nav>
       </header>
-      <section className="w-full py-12 md:py-24 xl:py-32 p-8">
+      <section className="w-full p-4 xl:p-8 xl:py-32">
         <div className="grid grid-cols-12 gap-4 relative">
           <div className="col-span-12 xl:col-span-7 flex items-center justify-center xl:justify-start">
-            <div className="flex flex-col gap-8 px-8">
-              <div className="space-y-2">
+            <div className="flex flex-col gap-8">
+              <div className="space-y-8">
                 <div className="flex flex-col xl:flex-row items-center gap-4">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                  <h1 className="text-6xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
                     Welcome to
                   </h1>
                   <div className="flex items-center">
@@ -236,7 +230,7 @@ export default function HomePage() {
         </div>
       </section>
       <section className="w-full py-12 md:py-24 xl:py-32" id="contact">
-        <div className="container px-4 md:px-6">
+        <div className="container flex flex-col gap-8 px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <div className="inline-block rounded-lg bg-[#085FCE] px-3 py-1 text-sm text-white">
@@ -249,42 +243,22 @@ export default function HomePage() {
                 Have any questions or concerns? We're here to help.
               </p>
             </div>
+
+            <div className="flex flex-col items-center  space-y-2">
+              <div className="flex items-center gap-2">
+                <h3 className="text-lg font-bold">Email</h3>
+                <p className="text-gray-50">support@andrew.com</p>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <h3 className="text-lg font-bold">Phone</h3>
+                <p className="text-gray-50">+1 (123) 456-7890</p>
+              </div>
+            </div>
           </div>
-          <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 xl:grid-cols-2 xl:gap-12">
-            <div className="flex flex-col justify-center space-y-4">
-              <form className="space-y-4">
-                <div className="space-y-1">
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" required />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" required type="email" />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea id="message" required />
-                </div>
-                <Button
-                  type="submit"
-                  className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 border-gray-200 px-8 text-sm font-medium shadow-sm transition-colors bg-gray-100 text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
-                >
-                  Submit
-                </Button>
-              </form>
-            </div>
-            <div className="flex flex-col justify-center space-y-4">
-              <div className="flex items-center justify-center">
-                <Icon path={mdiEmailOutline} size={3} />
-              </div>
-              <h3 className="text-lg font-bold">Email</h3>
-              <p className="text-gray-50">support@andrew.com</p>
-              <div className="flex items-center justify-center">
-                <Icon path={mdiPhoneOutline} size={3} />
-              </div>
-              <h3 className="text-lg font-bold">Phone</h3>
-              <p className="text-gray-50">+1 (123) 456-7890</p>
-            </div>
+
+          <div className="flex flex-col justify-center">
+            <CalendlyIntegration url="https://calendly.com/andrew-automotive-partner/andrew-insurance-support?text_color=030635&primary_color=f46036" />
           </div>
         </div>
       </section>

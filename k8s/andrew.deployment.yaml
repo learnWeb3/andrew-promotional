@@ -1,0 +1,51 @@
+# andrew DEPLOYMENT
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: andrew-deployment
+  labels:
+    tier: andrew
+spec:
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: andrew
+  template:
+    metadata:
+      labels:
+        tier: andrew
+    spec:
+      containers:
+        - name: andrew
+          image: antoineleguillou/andrew:v1.0.0
+          imagePullPolicy: IfNotPresent
+          resources:
+            limits:
+              cpu: 350m
+              memory: 450Mi
+            requests:
+              cpu: 250m
+              memory: 250Mi
+          ports:
+            - containerPort: 3000
+
+      restartPolicy: Always
+---
+# andrew SERVICES
+apiVersion: v1
+kind: Service
+metadata:
+  name: andrew-service
+spec:
+  selector:
+    tier: andrew
+  type: ClusterIP
+  ports:
+    - port: 3000
+      targetPort: 3000
+      name: http
