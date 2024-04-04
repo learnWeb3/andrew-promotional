@@ -67,16 +67,13 @@ export default function HomePage() {
               </div>
               <div className="flex flex-col gap-2 xl:flex-row justify-center xl:justify-start">
                 <Link
-                  className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 border-gray-200 px-8 text-sm font-medium son-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
-                  href="#"
+                  className="inline-flex h-12 items-center justify-center rounded-md border border-gray-200 border-gray-200 px-8 text-md font-medium shadow-sm transition-colors bg-gray-100 text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+                  href={
+                    process.env
+                      .NEXT_PUBLIC_ANDREW_CUSTOMER_FRONT_ROOT_URL as string
+                  }
                 >
-                  Get Started
-                </Link>
-                <Link
-                  className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 border-gray-200 px-8 text-sm font-medium shadow-sm transition-colors bg-gray-100 text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
-                  href="#"
-                >
-                  Learn More
+                  Insure my vehicle
                 </Link>
               </div>
             </div>
@@ -99,8 +96,8 @@ export default function HomePage() {
         id="mission"
       >
         <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
+          <div className="flex flex-col items-center justify-center space-y-8 text-center">
+            <div className="space-y-8">
               <div className="inline-block rounded-lg bg-[#085FCE] px-3 py-1 text-sm text-white">
                 Our Mission
               </div>
@@ -115,14 +112,22 @@ export default function HomePage() {
                 and savings ?
               </p>
             </div>
+            <Link
+              className="inline-flex h-12 items-center justify-center rounded-md border border-gray-200 border-gray-200 px-8 text-md font-medium shadow-sm transition-colors bg-gray-100 text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+              href={
+                process.env.NEXT_PUBLIC_ANDREW_CUSTOMER_FRONT_ROOT_URL as string
+              }
+            >
+              Drive with Andrew
+            </Link>
           </div>
         </div>
       </section>
 
       <section className="w-full py-12 md:py-24 xl:py-32" id="features">
         <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
+          <div className="flex flex-col items-center justify-center space-y-8 text-center">
+            <div className="space-y-8">
               <div className="inline-block rounded-lg bg-[#085FCE] px-3 py-1 text-sm text-white">
                 Features
               </div>
@@ -135,7 +140,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 xl:grid-cols-3 xl:gap-12">
-            <div className="flex flex-col justify-center space-y-4">
+            <div className="flex flex-col justify-center space-y-8">
               <div className="flex items-center justify-center">
                 <Icon path={mdiCloudOutline} size={3} />
               </div>
@@ -147,7 +152,7 @@ export default function HomePage() {
                 securely stored in the cloud for easy access.
               </p>
             </div>
-            <div className="flex flex-col justify-center space-y-4">
+            <div className="flex flex-col justify-center space-y-8">
               <div className="flex items-center justify-center">
                 <Icon path={mdiLockOutline} size={3} />
               </div>
@@ -158,7 +163,7 @@ export default function HomePage() {
                 personal information and driving data.
               </p>
             </div>
-            <div className="flex flex-col justify-center space-y-4">
+            <div className="flex flex-col justify-center space-y-8">
               <div className="flex items-center justify-center">
                 <Icon path={mdiHelpCircleOutline} size={3} />
               </div>
@@ -179,8 +184,8 @@ export default function HomePage() {
         id="testimonials"
       >
         <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
+          <div className="flex flex-col items-center justify-center space-y-8 text-center">
+            <div className="space-y-8">
               <div className="inline-block rounded-lg bg-[#085FCE] px-3 py-1 text-sm text-white">
                 Testimonials
               </div>
@@ -193,7 +198,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 xl:grid-cols-3 xl:gap-12">
-            <div className="flex flex-col justify-center space-y-4">
+            <div className="flex flex-col justify-center space-y-8">
               <blockquote className="text-lg font-semibold leading-snug xl:text-xl xl:leading-normal xl:text-2xl">
                 “I never thought insurance could be this fun! With [Website
                 Name], not only am I saving money, but I'm also improving my
@@ -204,7 +209,7 @@ export default function HomePage() {
                 <div className="font-semibold">Sarah H.</div>
               </div>
             </div>
-            <div className="flex flex-col justify-center space-y-4">
+            <div className="flex flex-col justify-center space-y-8">
               <blockquote className="text-lg font-semibold leading-snug xl:text-xl xl:leading-normal xl:text-2xl">
                 “As a cautious driver, I always felt like I was paying too much
                 for insurance. [Website Name] changed that completely. Now, I'm
@@ -215,7 +220,7 @@ export default function HomePage() {
                 <div className="font-semibold">Michael T.</div>
               </div>
             </div>
-            <div className="flex flex-col justify-center space-y-4">
+            <div className="flex flex-col justify-center space-y-8">
               <blockquote className="text-lg font-semibold leading-snug xl:text-xl xl:leading-normal xl:text-2xl">
                 “I've tried other insurance companies, but none compare to the
                 personalized service and savings I've experienced with [Website
@@ -227,12 +232,22 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+          <div className="flex items-center justify-center">
+            <Link
+              className="inline-flex h-12 items-center justify-center rounded-md border border-gray-200 border-gray-200 px-8 text-md font-medium shadow-sm transition-colors bg-gray-100 text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+              href={
+                process.env.NEXT_PUBLIC_ANDREW_CUSTOMER_FRONT_ROOT_URL as string
+              }
+            >
+              Let's get started
+            </Link>
+          </div>
         </div>
       </section>
       <section className="w-full py-12 md:py-24 xl:py-32" id="contact">
         <div className="container flex flex-col gap-8 px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
+          <div className="flex flex-col items-center justify-center space-y-8 text-center">
+            <div className="space-y-8">
               <div className="inline-block rounded-lg bg-[#085FCE] px-3 py-1 text-sm text-white">
                 Contact Us
               </div>
@@ -244,7 +259,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="flex flex-col items-center  space-y-2">
+            <div className="flex flex-col items-center space-y-8">
               <div className="flex items-center gap-2">
                 <h3 className="text-lg font-bold">Email</h3>
                 <p className="text-gray-50">support@andrew.com</p>

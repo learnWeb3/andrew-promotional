@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: andrew
-          image: antoineleguillou/andrew:v1.0.0
+          image: antoineleguillou/andrew:v1.1.0
           imagePullPolicy: IfNotPresent
           resources:
             limits:
